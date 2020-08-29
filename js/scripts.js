@@ -104,6 +104,7 @@ let countdown;
       aww.play()
       clearInterval(countdown);
     }
+
  const letsgo = new Audio('letsgo.wav');
     function letsGo() {
       letsgo.play()
