@@ -85,30 +85,48 @@ let countdown;
     }
 
 
-    function startTimer() {
-      const seconds = parseInt(this.dataset.time);
-      timer(seconds);
-    }
+   function startTimer() {
+
+    const seconds = parseInt(this.dataset.time);
+    timer(10);
+      setTimeout(function() {
+      timer(seconds)
+      // showStopButton()
+    }, 10000);
+
+  }
+
 
     buttons.forEach(button => button.addEventListener('click', startTimer));
     document.customForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const mins = this.minutes.value;
-          timer(mins * 60);
-          this.reset();
-         })
+      e.preventDefault();
+      const mins = this.minutes.value;
+      timer(mins * 60);
+      this.reset();
+    })
 
   const aww = new Audio('aww.mp3');
 
     function stop() {
-      aww.play()
+
       clearInterval(countdown);
+      currentTime = 0;
+      console.log("stop")
     }
 
  const letsgo = new Audio('letsgo.wav');
+
     function letsGo() {
       letsgo.play()
     }
+
+
+
+
+
+
+
+
 
 
 
