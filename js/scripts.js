@@ -61,6 +61,7 @@ let countdown;
   const timerDisplay = document.querySelector('.display_time_left');
   const buttons = document.querySelectorAll('[data-time');
 
+
   function timer(seconds) {
     clearInterval(countdown);
     const now = Date.now();
@@ -86,39 +87,60 @@ let countdown;
 
 
    function startTimer() {
-
     const seconds = parseInt(this.dataset.time);
+    countDownMusic()
     timer(10);
       setTimeout(function() {
+      showStopButton()
       timer(seconds)
-      // showStopButton()
     }, 10000);
-
   }
 
 
     buttons.forEach(button => button.addEventListener('click', startTimer));
-    document.customForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const mins = this.minutes.value;
-      timer(mins * 60);
-      this.reset();
-    })
+    // document.customForm.addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   const mins = this.minutes.value;
+    //   timer(mins * 60);
+    //   this.reset();
+    // })
 
-  const aww = new Audio('aww.mp3');
 
     function stop() {
-
+      document.getElementById("stopButton").style.display = "none";
       clearInterval(countdown);
-      currentTime = 0;
-      console.log("stop")
     }
 
- const letsgo = new Audio('letsgo.wav');
-
-    function letsGo() {
-      letsgo.play()
+    function showTimerControls() {
+      document.getElementById("timerButtons").style.display = "block";
     }
+    function hideTimerControls() {
+      document.getElementById("timerButtons").style.display = "none";
+    }
+
+    function hidePlayButton() {
+      document.getElementById("playButton").style.display = "none";
+    }
+
+    function showPlayButton() {
+      document.getElementById("playButton").style.display = "block";
+    }
+
+    function hideStopButton() {
+      document.getElementById("stopButton").style.display = "none";
+    }
+
+    function showStopButton() {
+      document.getElementById("stopButton").style.display = "block";
+    }
+
+
+    const countdownMusic = new Audio('countdown.mp3');
+    function countDownMusic() {
+      countdownMusic.play()
+    }
+
+
 
 
 

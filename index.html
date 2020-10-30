@@ -68,14 +68,16 @@
            <p class="display_end_time"></p>
          </div>
          <div class="timer">
+          <a id="playButton" onclick="showTimerControls(); hidePlayButton();" style="font-size: 1.65rem;color:black !important; background-color: #ffff !important; color: #569A43 !important; font-weight: bold;" class="btn btn-primary btn-xl js-scroll-trigger mb-3">PLAY</a>
           <div class="timer_controls">
-            <div>
-              <a style="font-size: 1.65rem;" onclick="stop()" class="btn btn-danger js-scroll-trigger mb-3">Stop</a>
+            <div id="stopButton" style="display: none;">
+              <a style="font-size: 1.65rem;" onclick="stop();showTimerControls();" class="btn btn-danger js-scroll-trigger mb-3">Reset</a>
             </div>
-            <a data-time="60" onclick="" style=" width: 60vh; border-radius: 0px ; font-size: 1.65rem;color: #408B25;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">EASY</a>
-            <a data-time="50" onclick="" style="width: 60vh; border-radius: 0px; font-size: 1.65rem;color:#ECD58A;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">NORMAL</a>
-            <a data-time="45" onclick="" style="width: 60vh;border-radius: 0px ;  font-size: 1.65rem;background-color: #ED3833;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">COMPETITION</a>
-
+            <div style="display: none;" id="timerButtons">
+              <a data-time="60" onclick="hideTimerControls(); " style="width: 60vh; border-radius: 0px ; font-size: 1.65rem;color: #408B25;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">EASY</a>
+              <a data-time="50" onclick="hideTimerControls();" style="width: 60vh; border-radius: 0px; font-size: 1.65rem;color:#ECD58A;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">NORMAL</a>
+              <a data-time="45" onclick="hideTimerControls();" style="width: 60vh;border-radius: 0px ;  font-size: 1.65rem;background-color: #ED3833;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">COMPETITION</a>
+          </div>
           </div>
         </div>
       </div>
@@ -169,3 +171,7 @@
                                 <form name="customForm" id="custom">
                               <input style="height: 60px;" type="text" name="minutes" placeholder="Enter minutes" class="form-control"aria-label="" aria-describedby="basic-addon1">
                             </div> -->
+
+
+
+
