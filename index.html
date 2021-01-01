@@ -1,167 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>Fitness Poker</title>
-  <!-- Favicon-->
-  <!-- <link rel="icon" type="image/x-icon" href="" /> -->
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-  <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-
-  <!-- Third party plugin CSS-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
-</head>
-<body id="page-top">
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img style="max-height: 30px; "class="" src="./assets/img/logo.png"></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Timers</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#rules">Rules </a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Purchase</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Masthead-->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <!--     <h1 class="text-uppercase text-white font-weight-bold">Fluffy</h1> -->
-          <a href="#" class=""><img style="max-height: 30vh; "class="" src="./assets/img/logo.png"></a>
-          <hr class="divider my-4" />
-        </div>
-        <div style="display: flex; flex-direction: column; width: 60vh;" class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5"></p>
-          <a style=";font-size: 1.65rem;color:black !important; background-color: #ffff !important; color: #569A43 !important; font-weight: bold;" class="btn btn-primary btn-xl js-scroll-trigger mb-3" href="#about">PLAY</a>
-          <a style="font-size: 1.65rem; color: #e53d3b !important;background-color: #ffff !important; color: black; font-weight: bold;" class="btn btn-primary btn-xl js-scroll-trigger mb-3" href="#rules">Rules</a>
-          <a style="font-size: 1.65rem;color:black !important; background-color: #0C40C4 !important; color: white; font-weight: bold;" class="btn btn-primary btn-xl js-scroll-trigger mb-3" href="#">Fitness Poker SM</a>
-          <a style="font-size: 1.65rem; background-color: #1b8433 !important; font-weight: bold;"class="btn btn-primary btn-xl js-scroll-trigger mb-3" href="">Buy More Decks</a>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- About-->
-
-
-  <section style="background-color: #0B0B0F;" class="page-section" id="about">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">Timers</h2>
-          <hr class="divider light my-4" />
-          <div class="display">
-           <h1 style="color: white; font-size: 100px;" class="display_time_left"></h1>
-           <p class="display_end_time"></p>
-         </div>
-         <div class="timer">
-          <a id="playButton" onclick="showTimerControls(); hidePlayButton();" style="font-size: 1.65rem;color:black !important; background-color: #ffff !important; color: #569A43 !important; font-weight: bold;" class="btn btn-primary btn-xl js-scroll-trigger mb-3">GAME START</a>
-          <div class="timer_controls">
-            <div id="stopButton" style="display: none;">
-              <a style="font-size: 1.65rem;" onclick="stop();showTimerControls();" class="btn btn-danger js-scroll-trigger mb-3">Reset</a>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Fitness Poker</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Fitness Poker</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#buyhere">Buy</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <div style="display: none;" id="timerButtons">
-              <a data-time="60" onclick="hideTimerControls(); " style="width: 60vh; border-radius: 0px ; font-size: 1.65rem;color: #408B25;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">EASY</a>
-              <a data-time="50" onclick="hideTimerControls();" style="width: 60vh; border-radius: 0px; font-size: 1.65rem;color:#ECD58A;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">NORMAL</a>
-              <a data-time="45" onclick="hideTimerControls();" style="width: 60vh;border-radius: 0px ;  font-size: 1.65rem;background-color: #ED3833;" class="btn btn-light btn-xl js-scroll-trigger col-sm-3 mb-3 timer_button">COMPETITION</a>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10">
+
+                      <div>
+                        <a href="#" class=""><img style="max-height: 15vh; object-fit:contain;" class="" src="./assets/img/logo.png"></a>
+                      </div>
+                       <!--  <h1 class="text-uppercase text-white font-weight-bold">Fitness Poker™ - Fitness Decks</h1> -->
+
+                    </div>
+                    <div class="col-lg-8 align-self-baseline m-4">
+                      <h2 class="text-white mt-0">Fitness Poker</h2>
+                        <p style="text-align: justify; " class="text-white-75 font-weight-light mb-5">Fitness Poker is for you who love exercise or are looking for a perfect gift for an acquaintance who almost lives in the gym, yoga studio or in the crossfit box! Our decks can be used in many different ways. Challenge yourself and your friends in Fitness Poker or use the cards as inspiration for the next workout. In the web app, you can also find more ways to use the cards.</p>
+
+                          <div>
+                             <a style="font-size: 1.25rem; width: 400px;" class="btn btn-primary btn-xl js-scroll-trigger m-1" href=https://ff.fitnesspoker.se>🤸‍♀️ Functional fitness</a>
+                          </div>
 
 
-<!-- Call to action-->
-<section id="rules" style="background-color: #0B0B0F;" class="page-section text-white">
+                        <div>
+                           <a style="font-size: 1.25rem;width: 400px;" class="btn btn-primary btn-xl js-scroll-trigger m-1" href=https://yoga.fitnesspoker.se>🧘 Yoga </a>
+                        </div>
+
+                        <div>
+
+                          <a style="font-size: 1.25rem;width: 400px;" class="btn btn-primary btn-xl js-scroll-trigger m-1" href="https://calisthenics.fitnesspoker.se">🏃‍♀️ Body Weight</a>
+
+                        </div>
+
+                        <div>
+                           <a style="font-size: 1.25rem;width: 400px;" class="btn btn-primary btn-xl js-scroll-trigger m-1" href="https://gym.fitnesspoker.se">🏋️‍♂️ Gym  </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="video" style="background-color: #0B0B0F;" class="page-section text-white">
   <div class="container text-center">
-    <h2 class="mb-4">Rules</h2>
-    <hr class="divider light my-4" />
-    <img src="./assets/img/rules.png" alt="" style="width:400px;">
-    <h3 style="text-align: center;">Preparation</h3>
-    <p style="text-align: justify;">
-      Shuffle the deck and deal 5 cards to each participant.
-      The cards are personal and are not shown to other players.
-      If you don’t have all the equipment shown on the cards, you can remove these cards before starting. The remaining exercises can be done without any or little equipment.
-      <br>
-      <br>
-    </p>
-    <h3>Game Start</h3>
-    <p style="text-align: justify;">Choose which exercise you want to give to the other
-      player/players and place it visibly on the floor or table.
-      Each round you must play a minimum of one card. If you have more cards in the same color / suit you can stack them. When the last card has been laid down, you add up the exercises and start the workout. Make it more competitive by adding a timer at 30 or 60 seconds. When you have finished the exercises, take new cards until you have 5 on hand and wait for the other players.
-    </p>
-    <br>
-
-    <h3>Special Cards</h3>
-    <h5>Reverse card</h5>
-    <p style="text-align: justify;">
-      The reverse card can be played at any time during the game. When played the players must then play their own cards and you can skip the round and rest. If more than two
-      players are in the game, the others must also do the exercises.
-      Double Trouble
-      This card doubles the value of your cards when played. This must be played when placing your cards.
-    </p>
+    <h2 class="mb-4">How to Play</h2>
+    <video width="320" height="240" controls>
+      <source src="assets/fitnesspoker.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
   </div>
 </section>
 
 
 
 
-<!-- Contact-->
-<section class="page-section" id="contact">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2 class="mt-0">Let's Get In Touch!</h2>
-        <hr class="divider my-4" />
-        <p class="text-muted mb-5">Call us or send an email and we'll make sure you get back to you as soon as possible!</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-        <div>+46 (073) 513-3709</div>
-      </div>
-      <div class="col-lg-4 mr-auto text-center">
-        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-        <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-        <a class="d-block" href="mailto:nicklas@nangarra.se">nicklas@nangarra.se</a>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Call to action-->
+        <section style="background-color:black;" id="buyhere" class="page-section text-white">
+            <div class="container text-center">
+                <h2 class="mb-4">You can buy Fitness Poker here</h2>
+                <a class="btn btn-light btn-xl" href="https://www.bellvivo.com">Buy online</a>
+            </div>
+        </section>
 
 
-<!-- Footer-->
-<footer class="bg-light py-5">
-  <div class="container"><div class="small text-center text-muted">Copyright © 2020 <a href="https://alexek1987.github.io/bigbossbusiness/">BB-Biz</a></div></div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-<!-- Third party plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-</body>
+
+                   <!-- Contact-->
+            <section class="page-section" id="contact">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8 text-center">
+                    <h2 class="mt-0">Let's Get In Touch!</h2>
+                    <hr class="divider my-4" />
+                    <p class="text-muted mb-5">Call us or send an email and we'll make sure you get back to you as soon as possible!</p>
+                  </div>
+                </div>
+                <div class="row">
+               <!--    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                    <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                    <div>+46 (073) 513-3709</div>
+                  </div> -->
+                  <div class="col-lg-4 mr-auto text-center">
+                    <i class="fas fa-globe fa-3x mb-3 text-muted"></i>
+                    <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
+                    <a class="d-block" href="https://www.nangarra.com">www.nangarra.com</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Nangarra Invest AB</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
-
-
-
